@@ -1,5 +1,5 @@
-<p>
-  <img src='https://s2.uupload.ir/files/whatsapplogo_ikx4.jpg' align='center' width='600' />
+<p align='center'  >
+  <img src='https://s2.uupload.ir/files/giflogowhatsapp_ggs9.gif' width='600' />
 </p>
 
 # WhatsApp Clone
