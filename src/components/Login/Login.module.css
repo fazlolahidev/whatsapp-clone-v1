@@ -1,0 +1,37 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  place-items: center;
+}
+
+.login__container {
+  width: min(500px, 100% - 2rem);
+  height: 75vh;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.151);
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.login__image {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
+
+.login__info > button {
+  margin-top: 30px;
+  color: #fff;
+  background-color: #0a8d48;
+}
+
+.login__info > button:hover {
+  color: #0a8d48;
+}
