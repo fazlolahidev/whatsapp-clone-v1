@@ -9,10 +9,9 @@ import Avatar from "@mui/material/Avatar";
 //* Router *//
 import { Link } from "react-router-dom";
 
-//* Firebase *// 
+//* Firebase *//
 import { addDoc, collection } from "@firebase/firestore";
 import { db } from "../../firebase";
-
 
 const SidebarChat = ({ addNewChat, id, name }) => {
   // State
@@ -27,9 +26,14 @@ const SidebarChat = ({ addNewChat, id, name }) => {
   const addChat = async () => {
     const roomName = prompt("Please enter a room name for chat");
 
-    const docRef = await addDoc(collection(db, "rooms"), {
-      name: roomName
-    });
+    if (roomName.trim().length === 0) {
+      alert('Room name must not empty! Please enter a correct name')
+    }
+    else {
+      const docRef = await addDoc(collection(db, "rooms"), {
+        name: roomName,
+      });
+    }
   };
 
   if (!seed) return;

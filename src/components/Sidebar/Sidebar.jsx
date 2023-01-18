@@ -22,6 +22,7 @@ import { db } from "../../firebase";
 //* Firebase Hooks *//
 import { auth } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 
 const Sidebar = () => {
   const [user, loading] = useAuthState(auth);
@@ -49,6 +50,14 @@ const Sidebar = () => {
     setShowLogout((pre) => !pre);
   };
 
+  const handleSignout = () => {
+    signOut(auth)
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className={style.sidebar}>
       {/* HEADER */}
@@ -66,7 +75,7 @@ const Sidebar = () => {
             <MoreVertIcon />
           </IconButton>
           {showLogout && (
-            <div className={style.sidebar__logout}>
+            <div className={style.sidebar__logout} onClick={handleSignout}>
               <LogoutIcon />
               <span>Logout</span>
             </div>
